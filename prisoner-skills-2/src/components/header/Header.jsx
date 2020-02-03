@@ -1,15 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
-const Header = (props) => {
+const Header = () => {
    return (
     <div className="options">
-        <Link className="option">
+        <Link className="option" to="/login">
             LOG IN
         </Link>
-        <Link className="option">
+        {/* <Link className="option" >
             CONTACT
-        </Link>
+        </Link> */}
     </div>
    );
 };

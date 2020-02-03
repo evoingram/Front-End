@@ -4,7 +4,7 @@
     height: 50px;
     letter-spacing: 0.5px;
     line-height: 50px;
-    padding: 0 35px 0 35px;
+    padding: 0 30px 0 30px;
     font-size: 1rem;
     background-color: black;
     color: white;
@@ -12,6 +12,8 @@
     font-family: 'Open Sans Condensed';
     font-weight: bolder;
     border: none;
+    border-radius: 23px;
+    margin-top: 3vh;
     cursor: pointer;
   
     &:hover {

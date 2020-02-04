@@ -4,15 +4,12 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 25px;
+    background-color: rgb(25, 25, 104);
   
     .logo-container {
       height: 100%;
-      padding: 25px 15px;
-      width: 25%;
-  
-      .App-logo {
-        width: 33vw;
-      }
+      padding: 5px 15px;
+      width: 15%;
     }
   
     .options {
@@ -25,6 +22,7 @@
       .option {
         padding: 10px;
         cursor: pointer;
+        color: white;
       }
     }
   }

@@ -54,7 +54,7 @@ class SignUp extends Component {
     }
 
     render() {
-        const {name, email, prison, role, password, confirmPassword} = this.state;
+        const {name, email, password, confirmPassword} = this.state;
         return(
             <div className="sign-up">
                 <h2 className="title">I do not have an account</h2>
@@ -74,22 +74,6 @@ class SignUp extends Component {
                         value={email}
                         onChange={this.handleChange}
                         label="Email"
-                        required
-                    />
-                    <FormInput
-                        type="text"
-                        name="prison"
-                        value={prison}
-                        onChange={this.handleChange}
-                        label="Prison"
-                        required
-                    />
-                    <FormInput
-                        type="text"
-                        name="role"
-                        value={role}
-                        onChange={this.handleChange}
-                        label="Role"
                         required
                     />
                     <FormInput

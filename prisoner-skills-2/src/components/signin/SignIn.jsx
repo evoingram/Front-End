@@ -24,14 +24,14 @@ class SignIn extends Component {
     handleChange = event => {
         const { value, username } = event.target;
 
-        this.setState({ [username]: value })
+        this.setState({ ...this.state, [event.target.name]: value });
     }
 
     render() {
         return(
             <div className="log-in">
                 <h2>I already have an account</h2>
-                <span>Log in with username and password.</span>
+                <span>Log in with Username and Password.</span>
 
                 <form onSubmit={this.handleSubmit}>
                     <FormInput 

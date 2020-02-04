@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import FormInput from '../form-input/FormInput';
 import CustomButton from "../custom-button/CustomButton";
 import "./sign-up.scss";
-// import { auth, createUserProfileDocument } from '../../firebase/firebase.utils';
+import { auth, createUserProfileDocument } from '../../firebase/firebase.utils';
 
 
 class SignUp extends Component {
@@ -21,36 +21,37 @@ class SignUp extends Component {
 
     handleSubmit = async event => {
         event.preventDefault();
+        console.log(this.state);
 
-        // const { name, email, prison, role, password, confirmPassword } = this.state;
+        const { username, password } = this.state;
 
-        // if(password !== confirmPassword) {
-        //     alert("passwords dont't match");
-        //     return;
-        // }
+        if(password !== password) {
+            alert("passwords dont't match");
+            return;
+        }
 
-        // try {
-        //    const { user } = await auth.createUserWithEmailAndPassword(email, password);
+        try {
+           const { user } = await auth.createUserWithEmailAndPassword(username, password);
 
-        //    await createUserProfileDocument(user, { name, prison, role });
+           await createUserProfileDocument(user, { username });
            
-        //    this.setState({
-        //     displayName: "",
-        //     email: "",
-        //     prison: "",
-        //     role: "",
-        //     password: "",
-        //     confirmPassword: ""
-        //    });       
-        // } catch (error) {
-        //     console.log(error);
-        // }
+           this.setState({
+            username: "",
+            // email: "",
+            // prison: "",
+            // role: "",
+            password: "",
+            // confirmPassword: ""
+           });       
+        } catch (error) {
+            console.log(error);
+        }
     };
 
     handleChange = event => {
         const { username, value } = event.target;
 
-        this.setState({ [username]: value });
+        this.setState({ ...this.state, [event.target.name]: value });
     }
 
     render() {
@@ -63,7 +64,6 @@ class SignUp extends Component {
                     <FormInput
                         type="text"
                         name="username"
-                        value={username}
                         onChange={this.handleChange}
                         label="Username"
                         required

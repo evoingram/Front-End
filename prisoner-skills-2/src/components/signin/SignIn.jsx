@@ -31,7 +31,7 @@ class SignIn extends Component {
         return(
             <div className="log-in">
                 <h2>I already have an account</h2>
-                <span>Sign in with your username and password.</span>
+                <span>Log in with username and password.</span>
 
                 <form onSubmit={this.handleSubmit}>
                     <FormInput 

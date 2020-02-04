@@ -10,12 +10,12 @@ class SignUp extends Component {
         super();
 
         this.state = {
-            name: "",
-            email: "",
-            prison: "",
-            role: "",
-            password: "",
-            confirmPassword: ""
+            username: "",
+            // email: "",
+            // prison: "",
+            // role: "",
+            password: ""
+            // confirmPassword: ""
         }
     }
 
@@ -48,34 +48,34 @@ class SignUp extends Component {
     };
 
     handleChange = event => {
-        const { name, value } = event.target;
+        const { username, value } = event.target;
 
-        this.setState({ [name]: value });
+        this.setState({ [username]: value });
     }
 
     render() {
-        const {name, email, password, confirmPassword} = this.state;
+        const {username, password} = this.state;
         return(
             <div className="sign-up">
                 <h2 className="title">I do not have an account</h2>
-                <span>Sign up with your email and password</span>
+                <span>Sign up with a username and password</span>
                 <form className="sign-up-form" onSubmit={this.handleSubmit}>
                     <FormInput
                         type="text"
-                        name="name"
-                        value={name}
+                        name="username"
+                        value={username}
                         onChange={this.handleChange}
-                        label="Name"
+                        label="Username"
                         required
                     />
-                    <FormInput
+                    {/* <FormInput
                         type="email"
                         name="email"
                         value={email}
                         onChange={this.handleChange}
                         label="Email"
                         required
-                    />
+                    /> */}
                     <FormInput
                         type="password"
                         name="password"
@@ -84,14 +84,14 @@ class SignUp extends Component {
                         label="Password"
                         required
                     />
-                    <FormInput
+                    {/* <FormInput
                         type="password"
                         name="confirmPassword"
                         value={confirmPassword}
                         onChange={this.handleChange}
                         label="Confirm Password"
                         required
-                    />
+                    /> */}
                     <CustomButton type="submit">SIGN UP</CustomButton>
                 </form>
             </div>

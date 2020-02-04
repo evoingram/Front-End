@@ -5,7 +5,7 @@ const Header = () => {
    return (
     <div className="options">
         <Link className="option" to="/login">
-            LOG IN
+            SIGN UP
         </Link>
         {/* <Link className="option" >
             CONTACT

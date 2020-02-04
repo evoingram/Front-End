@@ -10,7 +10,7 @@ class SignIn extends Component {
         super(props);
 
         this.state = {
-            email: "",
+            username: "",
             password: ""
         }
     }
@@ -18,28 +18,28 @@ class SignIn extends Component {
     handleSubmit = event => {
         event.preventDefault();
 
-        this.setState({ email: "", password: "" })
+        this.setState({ username: "", password: "" })
     }
 
     handleChange = event => {
-        const { value, name } = event.target;
+        const { value, username } = event.target;
 
-        this.setState({ [name]: value })
+        this.setState({ [username]: value })
     }
 
     render() {
         return(
             <div className="log-in">
                 <h2>I already have an account</h2>
-                <span>Sign in with your email and password.</span>
+                <span>Sign in with your username and password.</span>
 
                 <form onSubmit={this.handleSubmit}>
                     <FormInput 
-                    name="email" 
-                    type="email" 
-                    value={this.state.email}
+                    name="username" 
+                    type="username" 
+                    value={this.state.username}
                     handleChange={this.handleChange}
-                    label="email"
+                    label="Username"
                     required />
 
                     <FormInput 
@@ -47,9 +47,8 @@ class SignIn extends Component {
                     type="password" 
                     value={this.state.password}
                     handleChange={this.handleChange}
-                    label="password"
+                    label="Password"
                     required />
-                 
 
                     <div className="buttons">
                         <CustomButton type="submit">SIGN IN</CustomButton>

@@ -3,6 +3,7 @@ import FormInput from '../form-input/FormInput';
 import CustomButton from "../custom-button/CustomButton";
 import "./sign-up.scss";
 import { auth, createUserProfileDocument } from '../../firebase/firebase.utils';
+import axios from "axios";
 
 
 class SignUp extends Component {
@@ -23,30 +24,42 @@ class SignUp extends Component {
         event.preventDefault();
         console.log(this.state);
 
-        const { username, password } = this.state;
-
-        if(password !== password) {
-            alert("passwords dont't match");
-            return;
-        }
-
-        try {
-           const { user } = await auth.createUserWithEmailAndPassword(username, password);
-
-           await createUserProfileDocument(user, { username });
-           
-           this.setState({
-            username: "",
-            // email: "",
-            // prison: "",
-            // role: "",
-            password: "",
-            // confirmPassword: ""
-           });       
-        } catch (error) {
-            console.log(error);
-        }
+        axios
+            .post('https://prison-skills.herokuapp.com/api/auth/register', { username: this.state.username, password: this.state.password })
+            .then(res => {
+                console.log(res);
+                localStorage.setItem('token', res.data.token);
+                this.props.history.push('/prisonList');
+                // this.props.getPrisonList();
+                // this.props.fetchActivity();
+            })
+            .catch(err => console.log(err));
     };
+
+    //     const { username, password } = this.state;
+
+    //     if(password !== password) {
+    //         alert("passwords dont't match");
+    //         return;
+    //     }
+
+    //     try {
+    //        const { user } = await auth.createUserWithUsernameAndPassword(username, password);
+
+    //        await createUserProfileDocument(user, { username });
+           
+    //        this.setState({
+    //         username: "",
+    //         email: "",
+    //         prison: "",
+    //         role: "",
+    //         password: "",
+    //         confirmPassword: ""
+    //        });       
+    //     } catch (error) {
+    //         console.log(error);
+    //     }
+    // };
 
     handleChange = event => {
         const { username, value } = event.target;

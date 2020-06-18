@@ -4,6 +4,10 @@
 
 [Deployed Project](https://prisonerskillsapp.herokuapp.com/) 
 
+## My Role
+
+I completed all React components except for log-in and sign-up in this project, and assisted in planning and deployment, using Agile methodology.  
+
 ## Project Description
 
 This app allows prison management to broadcast the skill of inmates to make better use of their time using their skills to make a wage and becoming more employable after prison.
@@ -47,5 +51,3 @@ In the project directory, you can run:
 ## Documentation
 
 [Trello Board](https://trello.com/b/zWQ5kX9p/prisoner-skills-2-bw)
-
-I completed all React components except for log-in and sign-up in this project, and assisted in planning and deployment.  

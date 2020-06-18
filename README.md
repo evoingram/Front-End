@@ -21,6 +21,8 @@
 
 ## Key Features
 
+- Live team project
+
 ## Tech Stack
 
 Front end deployed to `Netlify` and built using:

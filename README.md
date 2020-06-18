@@ -28,6 +28,7 @@
 Front end deployed to `Netlify` and built using:
 
 - [React](https://www.apollographql.com/): ReactJS is an open-source JavaScript library which is used for building user interfaces specifically for single page applications. It's used for handling view layer for web and mobile apps. React also allows us to create reusable UI components.
+- [Cypress](https://github.com/cypress-io/cypress):  fast, easy and reliable testing for anything that runs in a browser.
 - []():  Description
 - []():  Description
 - []():  Description
